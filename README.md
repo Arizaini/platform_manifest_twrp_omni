@@ -59,11 +59,11 @@ repo init -u https://github.com/arizaini/platform_manifest_twrp_omni.git -b twrp
 Then to sync up:
 
 ```shell
-repo sync -j$(nproc --all) -c --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
+repo sync -j$(nproc --all) --force-sync -c --no-clone-bundle --no-tags --optimized-fetch --prune
 ```
 
 Then to build:
 
 ```shell
-cd <source-dir>; export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch omni_<device>-<userdebug|eng>; make -j$(nproc --all) recoveryimage
+export ALLOW_MISSING_DEPENDENCIES=true; . build/envsetup.sh; lunch omni_<device>-<userdebug|eng>; make -j$(nproc --all) recoveryimage
 ```
